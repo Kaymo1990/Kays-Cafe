@@ -22,7 +22,7 @@ Receipt.prototype.Print = function() {
     this.finalReceipt += `${this.individualOrders[index].itemName}     ${this.individualOrders[index].itemQuantity} X £${this.individualOrders[index].totalCost}\n`;
     finalTotal += this.individualOrders[index].totalCost;
 };
-  this.finalReceipt += `Total bill: £${finalTotal}`
+  this.finalReceipt += `Total bill: £${finalTotal.toFixed(2)}`
   return this.finalReceipt
 };
 
