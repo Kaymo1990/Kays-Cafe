@@ -46,11 +46,35 @@ body {
  text-align: center;
 }
 
+#chosen-item {
+  height: 30px;
+  width: 140px;
+  font-size: 17px;
+}
+
+#item-quantity {
+  height: 16px;
+  width: 50px;
+}
+
+#menu-submit {
+  height: 30px;
+  width: 80px;
+}
+
 #name-input {
   position: relative;
   width: 40%;
   margin-top: 60px;
   text-align: center;
+}
+
+#assigned-name {
+  height: 20px;
+  width: 150px;
+  font-weight: bolder;
+  font-family: fantasy;
+  font-size: 15px;
 }
 
 #full-menu {
@@ -82,13 +106,13 @@ opacity: 0.6;
 
 button {
   background-color: #4CAF50; /* Green */
-  border: none;
+  border: 1px solid black;
   color: white;
-  padding: 20px 50px;
+  padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 input[type=text] {
@@ -107,8 +131,4 @@ input[type=submit] {
     border:0 none;
     cursor:pointer;
     border-radius: 5px;
-}
-
-#menu-submit {
-  position: relative;
 }

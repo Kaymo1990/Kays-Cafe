@@ -16,10 +16,13 @@ Receipt.prototype.AddOrder = function(item, quantity) {
 
 Receipt.prototype.Print = function() {
   this.NameCheck();
+  var finalTotal = 0
   this.finalReceipt = `${this.customerName}\n\n`
   for (index = 0; index < this.individualOrders.length; index++) {
-    this.finalReceipt += `${this.individualOrders[index].itemName}     ${this.individualOrders[index].itemQuantity} X £${this.individualOrders[index].totalCost}\n`
+    this.finalReceipt += `${this.individualOrders[index].itemName}     ${this.individualOrders[index].itemQuantity} X £${this.individualOrders[index].totalCost}\n`;
+    finalTotal += this.individualOrders[index].totalCost;
 };
+  this.finalReceipt += `Total bill: £${finalTotal}`
   return this.finalReceipt
 };
 
@@ -29,7 +32,7 @@ Receipt.prototype.AssignName = function(name) {
   }
 
   else {
-    this.customerName = name;
+    this.customerName = toTitleCase(name);
     this.finalReceipt = `${name}\n\n`
   }
 };
@@ -38,4 +41,13 @@ Receipt.prototype.NameCheck = function() {
   if (this.customerName === undefined) {
     this.customerName = "Awesome Customer"
   };
+};
+
+function toTitleCase(str) {
+  return str.replace(
+      /\w\S*/g,
+      function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+  );
 };
