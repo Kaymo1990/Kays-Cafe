@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="interface.js"></script>
+  <script src="src/ItemPrices.js"></script>
+  <script src="src/Order.js"></script>
+  <script src="src/Receipt.js"></script>
+</head>
+<body>
+  <section>
+  <h1 id="cafe-name">Kay Cafe</h1>
+    <br/>
+  <h3 id="your-name">What is your name?</h3>
+    <br/>
+    <div id="name-input">
+  <form id="assign-name">
+    <input id="assigned-name" type="text" placeholder="Enter your name"></input>
+    <br/>
+    <input type="submit"></input>
+  </form>
+    </div>
+  <br/>
+  <p>
+    <div id="full-menu">
+      <div id="transbg">
+    <h2>Menu:</h2><br/>
+    Cafe Latte: £4.75<br/>
+    Flat White: £4.75<br/>
+    Cappucino: £3.85<br/>
+    Single Espresso: £2.05<br/>
+    Double Espresso: £3.75<br/>
+    Americano: £3.75<br/>
+    Cortado: £4.55<br/>
+    Tea: £3.65<br/>
+    Choc Mudcake: £6.40<br/>
+    Choc Mousse: £8.20<br/>
+    Affogato: £14.80<br/>
+    Tiramisu: £11.40<br/>
+    Blueberry Muffin: £4.05<br/>
+    Chocolate Chip Muffin: £4.05<br/>
+    Muffin Of The Day: £4.55
+      </div>
+    </div>
+      <div id="printed-receipt">Receipt</div>
+  </p>
+  <div id="menu-input">
+  <form id="menu-selection">
+    <input id="chosen-item" type="text" placeholder="Select a menu item"></input>
+    <br/>
+    <input id="item-quantity" type="text" placeholder="Enter quantity"></input>
+    <br/>
+    <input id="menu-submit" type="submit"></input>
+  </div>
+  </form>
+  <button id="print-receipt">Print receipt</button>
+  <br/>
+</section>
+</body>
+</html>
