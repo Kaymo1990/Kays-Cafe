@@ -31,16 +31,48 @@ expect(order.totalCost).toEqual(7.70);
 describe("Receipt", function() {
 
   it("should allow me to submit an order which is stored in my receipt", function() {
-    receipt.AddOrder("Cappucino", 1)
+    receipt.AddOrder("Cappucino", 1);
     expect(receipt.individualOrders.length).toEqual(1);
     expect(receipt.individualOrders[0].itemName).toEqual("Cappucino");
   });
 
-  it("should allow me to print a receipt with my full order", function() {
+  it("should prevent me from submitting an order that is undefined", function () {
+    receipt.AddOrder(undefined, 1);
+    expect(receipt.individualOrders.length).toEqual(0);
+  });
+
+  it("should prevent me from submitting an order with a quantity of 0", function () {
+    receipt.AddOrder("Cappucino", 0);
+    expect(receipt.individualOrders.length).toEqual(0);
+  });
+
+  it("should allow me to print a receipt with my full order", function () {
     receipt.AddOrder("Cappucino", 1);
     receipt.AddOrder("Americano", 2);
-    expect(receipt.)
+    expect(receipt.Print()).toEqual('Awesome Customer\n\nCappucino     1 X £3.85\nAmericano     2 X £7.50\nTotal bill: £11.35')
   });
+
+  it("should allow me to assign a name", function () {
+    receipt.AssignName("Kay");
+    expect(receipt.customerName).toEqual("Kay");
+  });
+
+  it("should have a default of Awesome Customer for the name when no name is provided", function () {
+    receipt.AssignName("");
+    expect(receipt.customerName).toEqual("Awesome Customer");
+  });
+
+  it("should change the customer name to Awesome Customer when no name is assigned", function () {
+    receipt.NameCheck();
+    expect(receipt.customerName).toEqual("Awesome Customer");
+  });
+
+  it("should automatically title case any string passed for the name", function () {
+    receipt.AssignName("kay mo");
+    expect(receipt.customerName).toEqual("Kay Mo");
+  })
+
+
 
 });
 

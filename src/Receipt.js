@@ -19,7 +19,7 @@ Receipt.prototype.Print = function() {
   var finalTotal = 0
   this.finalReceipt = `${this.customerName}\n\n`
   for (index = 0; index < this.individualOrders.length; index++) {
-    this.finalReceipt += `${this.individualOrders[index].itemName}     ${this.individualOrders[index].itemQuantity} X £${this.individualOrders[index].totalCost}\n`;
+    this.finalReceipt += `${this.individualOrders[index].itemName}     ${this.individualOrders[index].itemQuantity} X £${this.individualOrders[index].totalCost.toFixed(2)}\n`;
     finalTotal += this.individualOrders[index].totalCost;
 };
   this.finalReceipt += `Total bill: £${finalTotal.toFixed(2)}`
@@ -40,7 +40,7 @@ Receipt.prototype.AssignName = function(name) {
 Receipt.prototype.NameCheck = function() {
   if (this.customerName === undefined) {
     this.customerName = "Awesome Customer"
-  };
+  }
 };
 
 function toTitleCase(str) {
