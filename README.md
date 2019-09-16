@@ -63,7 +63,7 @@ For tests you can do the following:
 
 ------
 
-![](TrumpForGithub.gif)
+![](KayCafeLow.gif)
 
 ------
 
