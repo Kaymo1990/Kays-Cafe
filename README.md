@@ -66,13 +66,3 @@ For tests you can do the following:
 ![](KayCafeLow.gif)
 
 ------
-
-## Authors
-
-* Khurram Mohammed (Kay)
-* Kareem Zedan
-* Ian Aquino
-* James Palmer
-* Marvin Matovu
-
-------
